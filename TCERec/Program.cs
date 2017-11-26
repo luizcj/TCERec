@@ -16,7 +16,7 @@ namespace TCERec
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new TCE_REC());
         }
     }
 }

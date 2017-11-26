@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TCEREDXModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="SequencialGed">
+          <Key>
+            <PropertyRef Name="Numero" />
+            <PropertyRef Name="DV" />
+            <PropertyRef Name="Ano" />
+            <PropertyRef Name="Sequencial" />
+          </Key>
+          <Property Name="Numero" Type="int" Nullable="false" />
+          <Property Name="DV" Type="int" Nullable="false" />
+          <Property Name="Ano" Type="int" Nullable="false" />
+          <Property Name="NomeArquivo" Type="varchar" MaxLength="50" />
+          <Property Name="Sequencial" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="Numero" />
+            <PropertyRef Name="DV" />
+            <PropertyRef Name="Ano" />
+          </Key>
+          <Property Name="Numero" Type="int" Nullable="false" />
+          <Property Name="DV" Type="int" Nullable="false" />
+          <Property Name="Ano" Type="int" Nullable="false" />
+          <Property Name="NomeArquivo" Type="varchar" MaxLength="50" />
+          <Property Name="Sequencial" Type="int" />
+        </EntityType>
+        <EntityType Name="TDummy">
+          <Key>
+            <PropertyRef Name="um" />
+            <PropertyRef Name="dois" />
+            <PropertyRef Name="tres" />
+            <PropertyRef Name="quatro" />
+            <PropertyRef Name="cinco" />
+            <PropertyRef Name="seis" />
+          </Key>
+          <Property Name="um" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="dois" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="tres" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="quatro" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="cinco" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="seis" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="sete" Type="varchar" MaxLength="50" />
+          <Property Name="oito" Type="varchar" MaxLength="50" />
+          <Property Name="nove" Type="varchar" MaxLength="50" />
+          <Property Name="dez" Type="varchar" MaxLength="50" />
+          <Property Name="onze" Type="varchar" MaxLength="50" />
+          <Property Name="doze" Type="varchar" MaxLength="50" />
+          <Property Name="treze" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="TCEREDXModelStoreContainer">
+          <EntitySet Name="SequencialGed" EntityType="Self.SequencialGed" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TDummy" EntityType="Self.TDummy" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TCEREDXModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="SequencialGed">
+          <Key>
+            <PropertyRef Name="Numero" />
+            <PropertyRef Name="DV" />
+            <PropertyRef Name="Ano" />
+            <PropertyRef Name="Sequencial" />
+          </Key>
+          <Property Name="Numero" Type="Int32" Nullable="false" />
+          <Property Name="DV" Type="Int32" Nullable="false" />
+          <Property Name="Ano" Type="Int32" Nullable="false" />
+          <Property Name="NomeArquivo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sequencial" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Table">
+          <Key>
+            <PropertyRef Name="Numero" />
+            <PropertyRef Name="DV" />
+            <PropertyRef Name="Ano" />
+          </Key>
+          <Property Name="Numero" Type="Int32" Nullable="false" />
+          <Property Name="DV" Type="Int32" Nullable="false" />
+          <Property Name="Ano" Type="Int32" Nullable="false" />
+          <Property Name="NomeArquivo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sequencial" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="TCEREDXEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SequencialGeds" EntityType="Self.SequencialGed" />
+          <EntitySet Name="Tables" EntityType="Self.Table" />
+          <EntitySet Name="TDummies" EntityType="TCEREDXModel.TDummy" />
+        </EntityContainer>
+        <EntityType Name="TDummy">
+          <Key>
+            <PropertyRef Name="um" />
+            <PropertyRef Name="dois" />
+            <PropertyRef Name="tres" />
+            <PropertyRef Name="quatro" />
+            <PropertyRef Name="cinco" />
+            <PropertyRef Name="seis" />
+          </Key>
+          <Property Name="um" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dois" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tres" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="quatro" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="cinco" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="seis" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sete" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="oito" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nove" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dez" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="onze" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="doze" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="treze" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TCEREDXModelStoreContainer" CdmEntityContainer="TCEREDXEntities">
+          <EntitySetMapping Name="SequencialGeds">
+            <EntityTypeMapping TypeName="TCEREDXModel.SequencialGed">
+              <MappingFragment StoreEntitySet="SequencialGed">
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="DV" ColumnName="DV" />
+                <ScalarProperty Name="Ano" ColumnName="Ano" />
+                <ScalarProperty Name="NomeArquivo" ColumnName="NomeArquivo" />
+                <ScalarProperty Name="Sequencial" ColumnName="Sequencial" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tables">
+            <EntityTypeMapping TypeName="TCEREDXModel.Table">
+              <MappingFragment StoreEntitySet="Table">
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="DV" ColumnName="DV" />
+                <ScalarProperty Name="Ano" ColumnName="Ano" />
+                <ScalarProperty Name="NomeArquivo" ColumnName="NomeArquivo" />
+                <ScalarProperty Name="Sequencial" ColumnName="Sequencial" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TDummies">
+            <EntityTypeMapping TypeName="TCEREDXModel.TDummy">
+              <MappingFragment StoreEntitySet="TDummy">
+                <ScalarProperty Name="treze" ColumnName="treze" />
+                <ScalarProperty Name="doze" ColumnName="doze" />
+                <ScalarProperty Name="onze" ColumnName="onze" />
+                <ScalarProperty Name="dez" ColumnName="dez" />
+                <ScalarProperty Name="nove" ColumnName="nove" />
+                <ScalarProperty Name="oito" ColumnName="oito" />
+                <ScalarProperty Name="sete" ColumnName="sete" />
+                <ScalarProperty Name="seis" ColumnName="seis" />
+                <ScalarProperty Name="cinco" ColumnName="cinco" />
+                <ScalarProperty Name="quatro" ColumnName="quatro" />
+                <ScalarProperty Name="tres" ColumnName="tres" />
+                <ScalarProperty Name="dois" ColumnName="dois" />
+                <ScalarProperty Name="um" ColumnName="um" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
