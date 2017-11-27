@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLLTCERec;
+
 namespace TCERec
 {
     public partial class ImportaProcesso : Form
@@ -38,13 +39,21 @@ namespace TCERec
             try
             {
                 BLLTDummy seq = new BLLTDummy();
-                seq.Importar(txtNomeArquivo.Text);
+                seq.ImportarGenerico(txtNomeArquivo.Text);
+                
+
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao Importar, verifique se o arquivo já não foi importado");
+                MessageBox.Show("Erro ao Importar, verifique se o arquivo já não foi importado" + ex.InnerException);
 
             }
+        }
+
+        private void ImportaProcesso_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

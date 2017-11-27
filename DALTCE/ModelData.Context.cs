@@ -27,6 +27,8 @@ namespace DALTCE
     
         public virtual DbSet<SequencialGed> SequencialGeds { get; set; }
         public virtual DbSet<Table> Tables { get; set; }
+        public virtual DbSet<Guia> Guias { get; set; }
         public virtual DbSet<TDummy> TDummies { get; set; }
+        public virtual DbSet<Processo> Processoes { get; set; }
     }
 }

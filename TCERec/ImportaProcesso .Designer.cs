@@ -76,6 +76,7 @@
             this.Controls.Add(this.btnImportar);
             this.Name = "ImportaProcesso";
             this.Text = "Importar Processos";
+            this.Load += new System.EventHandler(this.ImportaProcesso_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -19,9 +19,7 @@ namespace TCERec
 
         private void FrmGuiaProcesso_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'tCEREDXDataSet.TDummy'. Você pode movê-la ou removê-la conforme necessário.
-            this.tDummyTableAdapter.Fill(this.tCEREDXDataSet.TDummy);
-            textBox1.Focus();
+            txtGuia.Focus();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -34,19 +32,15 @@ namespace TCERec
 
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Confirma Devolução da Guia?", "Confirmação", MessageBoxButtons.YesNo);
+        }
+
+        private void txtGuia_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

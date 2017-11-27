@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLLGuia.cs" />
+    <Compile Include="BLLProcesso.cs" />
     <Compile Include="BLLTDummy .cs" />
     <Compile Include="BLLSequencial.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

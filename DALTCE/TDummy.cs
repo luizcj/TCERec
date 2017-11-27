@@ -27,5 +27,6 @@ namespace DALTCE
         public string onze { get; set; }
         public string doze { get; set; }
         public string treze { get; set; }
+        public Nullable<System.DateTime> DataImportacao { get; set; }
     }
 }

@@ -339,7 +339,7 @@
             // 
             this.importarGuiasToolStripMenuItem.Name = "importarGuiasToolStripMenuItem";
             this.importarGuiasToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
-            this.importarGuiasToolStripMenuItem.Text = "Importar Guas / Processos";
+            this.importarGuiasToolStripMenuItem.Text = "Importar Guias / Processos";
             this.importarGuiasToolStripMenuItem.Click += new System.EventHandler(this.importarGuiasToolStripMenuItem_Click);
             // 
             // windowsMenu

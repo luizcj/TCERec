@@ -7,8 +7,10 @@
       <Diagram DiagramId="72d22add527d4f20a377d26dbad07473" Name="Diagram1">
         <EntityTypeShape EntityType="TCEREDXModel.SequencialGed" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TCEREDXModel.Table" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TCEREDXModel.TDummy" Width="1.5" PointX="0.75" PointY="3.75" />
-      </Diagram>
+        <EntityTypeShape EntityType="TCEREDXModel.Guia" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="TCEREDXModel.TDummy" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="TCEREDXModel.Processo" Width="1.5" PointX="7.375" PointY="0.75" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

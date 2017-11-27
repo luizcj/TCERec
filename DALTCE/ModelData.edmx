@@ -5,6 +5,59 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="TCEREDXModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Guia">
+          <Key>
+            <PropertyRef Name="NumeroGuia" />
+            <PropertyRef Name="AnoGuia" />
+            <PropertyRef Name="SeqGuia" />
+          </Key>
+          <Property Name="OrigemGuia" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="NumeroGuia" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="AnoGuia" Type="int" Nullable="false" />
+          <Property Name="Processo" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="DigProcesso" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="AnoProcesso" Type="smallint" Nullable="false" />
+          <Property Name="DestinoGuia" Type="varchar" MaxLength="10" />
+          <Property Name="DataGuia" Type="varchar" MaxLength="50" />
+          <Property Name="SeqGuia" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="ProcessoFilho" Type="varchar" MaxLength="10" />
+          <Property Name="DigitoProcessoFilho" Type="varchar" MaxLength="10" />
+          <Property Name="AnoProcessoFilho" Type="int" />
+          <Property Name="SeqProcessoFilo" Type="varchar" MaxLength="1" />
+          <Property Name="Devolvido" Type="bit" />
+          <Property Name="Processado" Type="bit" />
+          <Property Name="Digitalizado" Type="bit" />
+          <Property Name="Erro" Type="bit" />
+          <Property Name="DataImportacao" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Processo">
+          <Key>
+            <PropertyRef Name="NumeroGuia" />
+            <PropertyRef Name="AnoGuia" />
+            <PropertyRef Name="NProcesso" />
+            <PropertyRef Name="DigProcesso" />
+            <PropertyRef Name="AnoProcesso" />
+            <PropertyRef Name="SeqGuia" />
+          </Key>
+          <Property Name="OrigemGuia" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="NumeroGuia" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="AnoGuia" Type="int" Nullable="false" />
+          <Property Name="NProcesso" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="DigProcesso" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="AnoProcesso" Type="smallint" Nullable="false" />
+          <Property Name="DestinoGuia" Type="varchar" MaxLength="10" />
+          <Property Name="DataGuia" Type="varchar" MaxLength="50" />
+          <Property Name="SeqGuia" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="ProcessoFilho" Type="varchar" MaxLength="10" />
+          <Property Name="DigitoProcessoFilho" Type="varchar" MaxLength="10" />
+          <Property Name="AnoProcessoFilho" Type="int" />
+          <Property Name="SeqProcessoFilo" Type="varchar" MaxLength="1" />
+          <Property Name="Devolvido" Type="bit" />
+          <Property Name="Processado" Type="bit" />
+          <Property Name="Digitalizado" Type="bit" />
+          <Property Name="Erro" Type="bit" />
+          <Property Name="DataImportacao" Type="datetime" />
+        </EntityType>
         <EntityType Name="SequencialGed">
           <Key>
             <PropertyRef Name="Numero" />
@@ -52,8 +105,11 @@
           <Property Name="onze" Type="varchar" MaxLength="50" />
           <Property Name="doze" Type="varchar" MaxLength="50" />
           <Property Name="treze" Type="varchar" MaxLength="50" />
+          <Property Name="DataImportacao" Type="datetime" />
         </EntityType>
         <EntityContainer Name="TCEREDXModelStoreContainer">
+          <EntitySet Name="Guia" EntityType="Self.Guia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Processo" EntityType="Self.Processo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SequencialGed" EntityType="Self.SequencialGed" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TDummy" EntityType="Self.TDummy" Schema="dbo" store:Type="Tables" />
@@ -90,8 +146,35 @@
         <EntityContainer Name="TCEREDXEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="SequencialGeds" EntityType="Self.SequencialGed" />
           <EntitySet Name="Tables" EntityType="Self.Table" />
+          <EntitySet Name="Guias" EntityType="TCEREDXModel.Guia" />
           <EntitySet Name="TDummies" EntityType="TCEREDXModel.TDummy" />
+          <EntitySet Name="Processoes" EntityType="TCEREDXModel.Processo" />
         </EntityContainer>
+        <EntityType Name="Guia">
+          <Key>
+            <PropertyRef Name="NumeroGuia" />
+            <PropertyRef Name="AnoGuia" />
+            <PropertyRef Name="SeqGuia" />
+          </Key>
+          <Property Name="OrigemGuia" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NumeroGuia" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="AnoGuia" Type="Int32" Nullable="false" />
+          <Property Name="Processo" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DigProcesso" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="AnoProcesso" Type="Int16" Nullable="false" />
+          <Property Name="DestinoGuia" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DataGuia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SeqGuia" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="ProcessoFilho" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DigitoProcessoFilho" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="AnoProcessoFilho" Type="Int32" />
+          <Property Name="SeqProcessoFilo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Devolvido" Type="Boolean" />
+          <Property Name="Processado" Type="Boolean" />
+          <Property Name="Digitalizado" Type="Boolean" />
+          <Property Name="Erro" Type="Boolean" />
+          <Property Name="DataImportacao" Type="DateTime" Precision="3" />
+        </EntityType>
         <EntityType Name="TDummy">
           <Key>
             <PropertyRef Name="um" />
@@ -114,6 +197,35 @@
           <Property Name="onze" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="doze" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="treze" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DataImportacao" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Processo">
+          <Key>
+            <PropertyRef Name="NumeroGuia" />
+            <PropertyRef Name="AnoGuia" />
+            <PropertyRef Name="NProcesso" />
+            <PropertyRef Name="DigProcesso" />
+            <PropertyRef Name="AnoProcesso" />
+            <PropertyRef Name="SeqGuia" />
+          </Key>
+          <Property Name="OrigemGuia" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NumeroGuia" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="AnoGuia" Type="Int32" Nullable="false" />
+          <Property Name="NProcesso" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DigProcesso" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="AnoProcesso" Type="Int16" Nullable="false" />
+          <Property Name="DestinoGuia" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DataGuia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SeqGuia" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="ProcessoFilho" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DigitoProcessoFilho" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="AnoProcessoFilho" Type="Int32" />
+          <Property Name="SeqProcessoFilo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="Devolvido" Type="Boolean" />
+          <Property Name="Processado" Type="Boolean" />
+          <Property Name="Digitalizado" Type="Boolean" />
+          <Property Name="Erro" Type="Boolean" />
+          <Property Name="DataImportacao" Type="DateTime" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -143,9 +255,34 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Guias">
+            <EntityTypeMapping TypeName="TCEREDXModel.Guia">
+              <MappingFragment StoreEntitySet="Guia">
+                <ScalarProperty Name="DataImportacao" ColumnName="DataImportacao" />
+                <ScalarProperty Name="Erro" ColumnName="Erro" />
+                <ScalarProperty Name="Digitalizado" ColumnName="Digitalizado" />
+                <ScalarProperty Name="Processado" ColumnName="Processado" />
+                <ScalarProperty Name="Devolvido" ColumnName="Devolvido" />
+                <ScalarProperty Name="SeqProcessoFilo" ColumnName="SeqProcessoFilo" />
+                <ScalarProperty Name="AnoProcessoFilho" ColumnName="AnoProcessoFilho" />
+                <ScalarProperty Name="DigitoProcessoFilho" ColumnName="DigitoProcessoFilho" />
+                <ScalarProperty Name="ProcessoFilho" ColumnName="ProcessoFilho" />
+                <ScalarProperty Name="SeqGuia" ColumnName="SeqGuia" />
+                <ScalarProperty Name="DataGuia" ColumnName="DataGuia" />
+                <ScalarProperty Name="DestinoGuia" ColumnName="DestinoGuia" />
+                <ScalarProperty Name="AnoProcesso" ColumnName="AnoProcesso" />
+                <ScalarProperty Name="DigProcesso" ColumnName="DigProcesso" />
+                <ScalarProperty Name="Processo" ColumnName="Processo" />
+                <ScalarProperty Name="AnoGuia" ColumnName="AnoGuia" />
+                <ScalarProperty Name="NumeroGuia" ColumnName="NumeroGuia" />
+                <ScalarProperty Name="OrigemGuia" ColumnName="OrigemGuia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="TDummies">
             <EntityTypeMapping TypeName="TCEREDXModel.TDummy">
               <MappingFragment StoreEntitySet="TDummy">
+                <ScalarProperty Name="DataImportacao" ColumnName="DataImportacao" />
                 <ScalarProperty Name="treze" ColumnName="treze" />
                 <ScalarProperty Name="doze" ColumnName="doze" />
                 <ScalarProperty Name="onze" ColumnName="onze" />
@@ -162,7 +299,31 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-        </EntityContainerMapping>
+          <EntitySetMapping Name="Processoes">
+            <EntityTypeMapping TypeName="TCEREDXModel.Processo">
+              <MappingFragment StoreEntitySet="Processo">
+                <ScalarProperty Name="DataImportacao" ColumnName="DataImportacao" />
+                <ScalarProperty Name="Erro" ColumnName="Erro" />
+                <ScalarProperty Name="Digitalizado" ColumnName="Digitalizado" />
+                <ScalarProperty Name="Processado" ColumnName="Processado" />
+                <ScalarProperty Name="Devolvido" ColumnName="Devolvido" />
+                <ScalarProperty Name="SeqProcessoFilo" ColumnName="SeqProcessoFilo" />
+                <ScalarProperty Name="AnoProcessoFilho" ColumnName="AnoProcessoFilho" />
+                <ScalarProperty Name="DigitoProcessoFilho" ColumnName="DigitoProcessoFilho" />
+                <ScalarProperty Name="ProcessoFilho" ColumnName="ProcessoFilho" />
+                <ScalarProperty Name="SeqGuia" ColumnName="SeqGuia" />
+                <ScalarProperty Name="DataGuia" ColumnName="DataGuia" />
+                <ScalarProperty Name="DestinoGuia" ColumnName="DestinoGuia" />
+                <ScalarProperty Name="AnoProcesso" ColumnName="AnoProcesso" />
+                <ScalarProperty Name="DigProcesso" ColumnName="DigProcesso" />
+                <ScalarProperty Name="NProcesso" ColumnName="NProcesso" />
+                <ScalarProperty Name="AnoGuia" ColumnName="AnoGuia" />
+                <ScalarProperty Name="NumeroGuia" ColumnName="NumeroGuia" />
+                <ScalarProperty Name="OrigemGuia" ColumnName="OrigemGuia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

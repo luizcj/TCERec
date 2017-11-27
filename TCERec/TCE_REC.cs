@@ -112,7 +112,7 @@ namespace TCERec
 
         private void TCE_REC_Load(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void importarToolStripMenuItem_Click(object sender, EventArgs e)
