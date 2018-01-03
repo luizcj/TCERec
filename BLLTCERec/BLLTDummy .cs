@@ -43,7 +43,7 @@ namespace BLLTCERec
             try
             {
               //  dAL.AdicionarRange(lst);
-             //   bLLG.AdicionarRange(lstGuia);
+                bLLG.AdicionarRange(lstGuia);
                 bLLP.AdicionarRange(lstProcesso);
             }
             catch (Exception ex)
@@ -103,19 +103,19 @@ namespace BLLTCERec
             snumero = strLine.Substring(0, 6);
 
             
-            sq.um = sCampos[0];
-            sq.dois = sCampos[1];
-            sq.tres = sCampos[2];
-            sq.quatro = sCampos[3];
-            sq.cinco = sCampos[4];
-            sq.seis = sCampos[5];
-            sq.sete = sCampos[6];
-            sq.oito = sCampos[7];
-            sq.nove = sCampos[8];
-            sq.dez = sCampos[9];
-            sq.onze = sCampos[10];
-            sq.doze = sCampos[11];
-            sq.treze = sCampos[12];
+            sq.um = sCampos[0].Trim();
+            sq.dois = sCampos[1].Trim();
+            sq.tres = sCampos[2].Trim();
+            sq.quatro = sCampos[3].Trim();
+            sq.cinco = sCampos[4].Trim();
+            sq.seis = sCampos[5].Trim();
+            sq.sete = sCampos[6].Trim();
+            sq.oito = sCampos[7].Trim();
+            sq.nove = sCampos[8].Trim();
+            sq.dez = sCampos[9].Trim();
+            sq.onze = sCampos[10].Trim();
+            sq.doze = sCampos[11].Trim();
+            sq.treze = sCampos[12].Trim();
             return sq;
         }
 

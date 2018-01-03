@@ -53,6 +53,19 @@ namespace BLLTCERec
 
         }
 
+        public static void DevolverGuia(string text)
+        {
+            try
+            {
+                DALGuia dalG = new DALGuia();
+                dalG.DevolverGuia(text);
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
         public void AdicionarRange(List<Guia> seq)
         {
             try
@@ -78,23 +91,34 @@ namespace BLLTCERec
             if (strLine.Length == 0) return sq;
             snumero = strLine.Substring(0, 6);
 
-            sq.OrigemGuia = sCampos[0];
-            sq.NumeroGuia = sCampos[1];
-            sq.AnoGuia = Int16.Parse(sCampos[2]);
-            sq.Processo = sCampos[3];
-            sq.DigProcesso = sCampos[4];
-            sq.AnoProcesso = Int16.Parse(sCampos[5]);
-            sq.DestinoGuia = sCampos[6];
-            sq.DataGuia = sCampos[7];
-            sq.SeqGuia = sCampos[8];
-            sq.ProcessoFilho = sCampos[9];
-            sq.DigitoProcessoFilho = sCampos[10];
+            sq.OrigemGuia = sCampos[0].Trim();
+            sq.NumeroGuia = sCampos[1].Trim();
+            sq.AnoGuia = Int16.Parse(sCampos[2].Trim());
+            sq.Processo = sCampos[3].Trim();
+            sq.DigProcesso = sCampos[4].Trim();
+            sq.AnoProcesso = Int16.Parse(sCampos[5].Trim());
+            sq.DestinoGuia = sCampos[6].Trim();
+            sq.DataGuia = sCampos[7].Trim();
+            sq.SeqGuia = sCampos[8].Trim();
+            sq.ProcessoFilho = sCampos[9].Trim();
+            sq.DigitoProcessoFilho = sCampos[10].Trim();
 
-            Int16.TryParse(sCampos[11], out zero);
+            Int16.TryParse(sCampos[11].Trim(), out zero);
             sq.AnoProcessoFilho = zero;
             
             //sq.treze = sCampos[13];
             return sq;
+        }
+
+        public Guia CarregarGuia(string numGuia)
+        {
+            try
+            {
+                DALGuia dalG = new DALGuia();
+                return dalG.CarregarGuia(numGuia);
+            }
+            catch (Exception ex)
+            { throw ex; }
         }
 
     }

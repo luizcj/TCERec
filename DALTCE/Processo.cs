@@ -32,5 +32,6 @@ namespace DALTCE
         public Nullable<bool> Digitalizado { get; set; }
         public Nullable<bool> Erro { get; set; }
         public Nullable<System.DateTime> DataImportacao { get; set; }
+        public string PastaDestino { get; set; }
     }
 }

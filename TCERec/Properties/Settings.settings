@@ -10,5 +10,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=DESKTOP-J8AJDES\SQLEXPRESS;Initial Catalog=TCEREDX;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework</Value>
     </Setting>
+    <Setting Name="Caminho" Type="System.String" Scope="User">
+      <Value Profile="(Default)">c:\Work</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

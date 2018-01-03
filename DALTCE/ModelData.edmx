@@ -57,6 +57,7 @@
           <Property Name="Digitalizado" Type="bit" />
           <Property Name="Erro" Type="bit" />
           <Property Name="DataImportacao" Type="datetime" />
+          <Property Name="PastaDestino" Type="varchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="SequencialGed">
           <Key>
@@ -226,6 +227,7 @@
           <Property Name="Digitalizado" Type="Boolean" />
           <Property Name="Erro" Type="Boolean" />
           <Property Name="DataImportacao" Type="DateTime" Precision="3" />
+          <Property Name="PastaDestino" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -302,6 +304,7 @@
           <EntitySetMapping Name="Processoes">
             <EntityTypeMapping TypeName="TCEREDXModel.Processo">
               <MappingFragment StoreEntitySet="Processo">
+                <ScalarProperty Name="PastaDestino" ColumnName="PastaDestino" />
                 <ScalarProperty Name="DataImportacao" ColumnName="DataImportacao" />
                 <ScalarProperty Name="Erro" ColumnName="Erro" />
                 <ScalarProperty Name="Digitalizado" ColumnName="Digitalizado" />

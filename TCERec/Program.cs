@@ -16,6 +16,15 @@ namespace TCERec
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            DateTime date = new DateTime(2018,01,10);
+
+            if (DateTime.Now > date)
+            {
+                MessageBox.Show("Erro");
+                Application.Exit();
+
+            }
             Application.Run(new TCE_REC());
            
         }
